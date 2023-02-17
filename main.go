@@ -5,6 +5,7 @@ import (
 	"github.com/aluka-7/api-base/wire"
 	"github.com/aluka-7/configuration"
 	"github.com/aluka-7/datasource"
+	"github.com/aluka-7/gomongo"
 	"github.com/aluka-7/web"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/labstack/echo/v4"
@@ -13,7 +14,8 @@ import (
 func App(conf configuration.Configuration) {
 	web.App(func(eng *echo.Echo) {
 		orm := datasource.Engine(conf, wire.SystemId).Orm("")
-		cs := wire.InitializeCompanyService(orm)
+		gmc := gomongo.Engine(conf, wire.SystemId).Connection("")
+		cs := wire.InitializeCompanyService(orm, gmc)
 
 		group := eng.Group("/api/v1")
 		controller.NewCompanyController(group, "/company", cs)

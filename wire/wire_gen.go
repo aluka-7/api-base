@@ -9,13 +9,14 @@ import (
 	"github.com/aluka-7/api-base/app"
 	"github.com/aluka-7/api-base/app/repository"
 	service2 "github.com/aluka-7/api-base/app/service"
+	"go.mongodb.org/mongo-driver/mongo"
 	"xorm.io/xorm"
 )
 
 // Injectors from wire.go:
 
-func InitializeCompanyService(engine *xorm.Engine) app.ICompanyService {
-	iCompanyRepository := service.NewCompanyRepository(engine)
+func InitializeCompanyService(engine *xorm.Engine, client *mongo.Client) app.ICompanyService {
+	iCompanyRepository := service.NewCompanyRepository(engine, client)
 	iCompanyService := service2.NewCompanyService(iCompanyRepository)
 	return iCompanyService
 }
