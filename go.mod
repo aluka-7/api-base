@@ -3,18 +3,21 @@ module github.com/aluka-7/api-base
 go 1.19
 
 require (
+	github.com/aluka-7/cache v1.0.4
+	github.com/aluka-7/cache-redis v1.0.3
 	github.com/aluka-7/configuration v1.0.1
 	github.com/aluka-7/datasource v1.0.0
+	github.com/aluka-7/gomongo v0.0.0-20230216034735-4291ddae881e
 	github.com/aluka-7/web v1.0.3
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/google/wire v0.5.0
 	github.com/labstack/echo/v4 v4.10.0
+	go.mongodb.org/mongo-driver v1.11.2
 	xorm.io/xorm v1.3.2
 )
 
 require (
-	github.com/aluka-7/common v1.0.0 // indirect
-	github.com/aluka-7/gomongo v0.0.0-20230215025701-7dcb9899190a // indirect
+	github.com/aluka-7/common v1.0.1 // indirect
 	github.com/aluka-7/metacode v1.0.1 // indirect
 	github.com/aluka-7/metric v1.0.1 // indirect
 	github.com/aluka-7/trace v1.0.2 // indirect
@@ -22,6 +25,8 @@ require (
 	github.com/aluka-7/zipkin v1.0.1 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.2.0 // indirect
+	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
+	github.com/go-redis/redis/v8 v8.11.5 // indirect
 	github.com/goccy/go-json v0.8.1 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
@@ -51,7 +56,6 @@ require (
 	github.com/xdg-go/scram v1.1.2 // indirect
 	github.com/xdg-go/stringprep v1.0.4 // indirect
 	github.com/youmark/pkcs8 v0.0.0-20201027041543-1326539a0a0a // indirect
-	go.mongodb.org/mongo-driver v1.11.2 // indirect
 	golang.org/x/crypto v0.6.0 // indirect
 	golang.org/x/net v0.6.0 // indirect
 	golang.org/x/sync v0.1.0 // indirect
